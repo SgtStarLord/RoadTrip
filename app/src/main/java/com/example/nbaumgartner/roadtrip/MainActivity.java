@@ -8,10 +8,16 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.EditText;
+
+import com.example.nbaumgartner.roadtrip.models.YellowCarGame;
 
 public class MainActivity extends AppCompatActivity {
 
     private Toolbar toolbar;
+    private Button yellowCarButton;
+    private EditText yellowCarPlayers;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +26,10 @@ public class MainActivity extends AppCompatActivity {
 
         toolbar = (Toolbar) findViewById(R.id.tool_bar); // Attaching the layout to the toolbar object
         setSupportActionBar(toolbar);
+
+        //setting up screen parts
+        yellowCarButton = (Button) findViewById(R.id.yellowCarButton);
+        yellowCarPlayers = (EditText) findViewById(R.id.yellowCarPlayersEditText);
 
 
 /*        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -30,6 +40,14 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }*//*
         });*/
+    }
+
+    private void startYelloCar(){
+        YellowCarGame game = new YellowCarGame();
+        //TODO: get players from UI;
+       // int players = (int)yellowCarPlayers.getEditableText();
+        //TODO: add players to game
+        //then open new screen with player name info being entered (pass game?)
     }
 
     @Override
